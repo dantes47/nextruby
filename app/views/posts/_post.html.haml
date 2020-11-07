@@ -1,0 +1,18 @@
+.card
+  .card-header
+    = link_to post.title, post
+    /= post.title
+  .card-body
+    = post.content
+  .card-footer
+    = post.created_at
+    /= link_to 'Show', post
+    = link_to 'Edit', edit_post_path(post)
+    .btn-group
+      = link_to edit_post_path(post), class: 'btn btn-sm btn-warning' do
+        .fas.fa-pen-square
+        Edit
+      = link_to post, method: :delete, data: { confirm: 'Sure?' }, class: 'btn btn-sm btn-danger' do
+        .far.fa-trash-alt
+        Delete
+%p
