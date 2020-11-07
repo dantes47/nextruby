@@ -26,3 +26,5 @@ gem "haml-rails", "~> 2.0"
 gem 'bootstrap', '~> 4.5', '>= 4.5.2'
 gem 'mini_racer', '~> 0.3.1'
 gem 'jquery-rails'
+gem 'font-awesome-sass', '~> 5.15.1'
+
