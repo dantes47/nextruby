@@ -9,4 +9,19 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .container
+      %p.notice= notice
+      %p.alert= alert
+      
+      - if current_user
+        = current_user.email
+        = link_to edit_user_registration_path do
+          .fa.fa-cog
+          %b Settings
+        = link_to destroy_user_session_path, method: :delete do
+          .fa.fa-sign-out-alt
+          %b Exit
+      - else
+        = link_to 'Registration', new_user_registration_path
+        = link_to 'Enter', new_user_session_path
+    
       = yield
